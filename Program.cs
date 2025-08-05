@@ -4,8 +4,22 @@
     {
         static void Main(string[] args)
         {
-            RecurseNaturalNumbers(10);
-            Console.WriteLine();
+            if (args.Length > 0)
+            {
+                foreach (var arg in args)
+                {
+                    if (int.TryParse(arg, out int num))
+                    {
+                        RecurseNaturalNumbers(num);
+                        Console.WriteLine();
+                    }
+                }
+            }
+            else
+            {
+                RecurseNaturalNumbers(10);
+                Console.WriteLine();
+            }
         }
 
         static void RecurseNaturalNumbers(int n)
